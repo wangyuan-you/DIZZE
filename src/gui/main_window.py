@@ -96,20 +96,20 @@ class MainWindow(QMainWindow):
         table.setRowCount(len(roi_rows))
 
         for row_index, row in enumerate(roi_rows):
-           profit = row["ev_twd"] - row["total_cost_twd"]
+            profit = row.get("ev_twd", 0) - row.get("total_cost_twd", 0)
 
-        values = [
-    row["name"],
-    f'{row["total_cost_twd"]:.0f}',
-    f'{row["ev_twd"]:.0f}',
-    f'{profit:+.0f}',
-    f'{row["roi"] * 100:.2f}%',
-    row["gold_pool"],
-    row.get("updated_at", "-"),
-]
+            values = [
+                row.get("name", "-"),
+                f'{row.get("total_cost_twd", 0):.0f}',
+                f'{row.get("ev_twd", 0):.0f}',
+                f'{profit:+.0f}',
+                f'{row.get("roi", 0) * 100:.2f}%',
+                row.get("gold_pool", "-"),
+                row.get("updated_at", "-"),
+            ]
 
-        for col_index, value in enumerate(values):
-                table.setItem(row_index, col_index, QTableWidgetItem(value))
+            for col_index, value in enumerate(values):
+                table.setItem(row_index, col_index, QTableWidgetItem(str(value)))
 
         next_button = QPushButton("Update Prices - coming in v0.8")
 
