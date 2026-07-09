@@ -61,6 +61,18 @@ def init_database():
             value TEXT NOT NULL
         )
     """)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS market_prices (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            item_name TEXT NOT NULL,
+            market TEXT NOT NULL,
+            price_usd REAL NOT NULL,
+            price_twd REAL NOT NULL,
+            currency TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE(item_name, market)
+        )
+    """)
 
     conn.commit()
     conn.close()

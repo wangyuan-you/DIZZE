@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
 
         for name in [
             "Dashboard",
-            "Cases ROI",
+            "Cases",
             "Trade Up",
             "Inventory",
             "Market Watch",
@@ -50,12 +50,12 @@ class MainWindow(QMainWindow):
         cards_layout = QHBoxLayout()
 
         cards = [
-            ("Cases", "43", "已建立本地箱子資料庫"),
-            ("ROI Engine", "Ready", "等待接入正式價格資料"),
-            ("Currency", "TWD", "台幣換算模式"),
-            ("Version", "v0.2", "Dashboard Foundation"),
-        ]
-
+    ("Cases", "43", "已建立本地箱子資料庫"),
+    ("ROI Engine", "Ready", "SQLite Driven"),
+    ("Market", "Offline", "Steam connector ready for v0.8"),
+    ("Cache", "4 Items", "Market Data Layer"),
+    ("Version", "v0.7", "Market Data Layer"),
+]
         for title_text, value_text, desc_text in cards:
             card = QFrame()
             card.setObjectName("Card")
@@ -80,34 +80,38 @@ class MainWindow(QMainWindow):
         section_title.setStyleSheet("font-size: 22px; font-weight: bold; margin-top: 20px;")
 
         table = QTableWidget()
-        table.setColumnCount(6)
+        table.setColumnCount(7)
         table.setHorizontalHeaderLabels([
-            "Case",
-            "Cost (NT$)",
-            "EV (NT$)",
-            "ROI",
-            "Gold Pool",
-            "Tag",
-        ])
+    "Case",
+    "Cost (NT$)",
+    "EV (NT$)",
+    "Profit",
+    "ROI",
+    "Gold Pool",
+    "Updated",
+])
 
         roi_rows = get_case_roi_rows()
 
         table.setRowCount(len(roi_rows))
 
         for row_index, row in enumerate(roi_rows):
-            values = [
-                row["name"],
-                f'{row["total_cost_twd"]:.0f}',
-                f'{row["ev_twd"]:.0f}',
-                f'{row["roi"] * 100:.2f}%',
-                row["gold_pool"],
-                row["tags"],
-            ]
+           profit = row["ev_twd"] - row["total_cost_twd"]
 
-            for col_index, value in enumerate(values):
+        values = [
+    row["name"],
+    f'{row["total_cost_twd"]:.0f}',
+    f'{row["ev_twd"]:.0f}',
+    f'{profit:+.0f}',
+    f'{row["roi"] * 100:.2f}%',
+    row["gold_pool"],
+    row.get("updated_at", "-"),
+]
+
+        for col_index, value in enumerate(values):
                 table.setItem(row_index, col_index, QTableWidgetItem(value))
 
-        next_button = QPushButton("Next: Build Cases ROI Engine")
+        next_button = QPushButton("Update Prices - coming in v0.8")
 
         content_layout.addWidget(title)
         content_layout.addWidget(subtitle)
