@@ -33,5 +33,34 @@ def init_database():
         )
     """)
 
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS prices (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            item_name TEXT NOT NULL,
+            source TEXT NOT NULL,
+            price_usd REAL NOT NULL,
+            price_twd REAL NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+    """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS market_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            item_name TEXT NOT NULL,
+            source TEXT NOT NULL,
+            price_usd REAL NOT NULL,
+            price_twd REAL NOT NULL,
+            recorded_at TEXT NOT NULL
+        )
+    """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS app_settings (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        )
+    """)
+
     conn.commit()
     conn.close()
