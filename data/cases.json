@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Fracture Case",
+    "case_price_usd": 0.35,
+    "gold_pool": "Nomad / Skeleton / Paracord / Survival",
+    "tags": ["Nomad", "Skeleton"]
+  },
+  {
+    "name": "Dreams & Nightmares Case",
+    "case_price_usd": 1.2,
+    "gold_pool": "Butterfly / Huntsman / Falchion / Bowie / Shadow Daggers",
+    "tags": ["Butterfly"]
+  },
+  {
+    "name": "Kilowatt Case",
+    "case_price_usd": 0.85,
+    "gold_pool": "Kukri",
+    "tags": ["Kukri"]
+  },
+  {
+    "name": "Revolution Case",
+    "case_price_usd": 0.65,
+    "gold_pool": "Gloves",
+    "tags": ["Gloves"]
+  }
+]

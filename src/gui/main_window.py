@@ -1,3 +1,4 @@
+from src.roi.case_roi_engine import get_case_roi_rows
 from PySide6.QtWidgets import (
     QFrame,
     QHBoxLayout,
@@ -89,20 +90,22 @@ class MainWindow(QMainWindow):
             "Tag",
         ])
 
-        sample_rows = [
-            ["Fracture Case", "91", "78", "85.7%", "Nomad / Skeleton", "Nomad"],
-            ["Dreams & Nightmares", "118", "96", "81.3%", "Butterfly", "Butterfly"],
-            ["Kilowatt Case", "107", "89", "83.2%", "Kukri", "Knife"],
-            ["Revolution Case", "100", "74", "74.0%", "Gloves", "Gloves"],
-        ]
+        roi_rows = get_case_roi_rows()
 
-        table.setRowCount(len(sample_rows))
+        table.setRowCount(len(roi_rows))
 
-        for row_index, row_data in enumerate(sample_rows):
-            for col_index, value in enumerate(row_data):
+        for row_index, row in enumerate(roi_rows):
+            values = [
+                row["name"],
+                f'{row["total_cost_twd"]:.0f}',
+                f'{row["ev_twd"]:.0f}',
+                f'{row["roi"] * 100:.2f}%',
+                row["gold_pool"],
+                row["tags"],
+            ]
+
+            for col_index, value in enumerate(values):
                 table.setItem(row_index, col_index, QTableWidgetItem(value))
-
-        table.resizeColumnsToContents()
 
         next_button = QPushButton("Next: Build Cases ROI Engine")
 
