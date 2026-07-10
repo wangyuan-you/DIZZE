@@ -1,0 +1,142 @@
+[
+  {
+    "case_name": "Fracture Case",
+    "drops": [
+      {
+        "item_name": "Fracture Blue Pool Average",
+        "rarity": "blue",
+        "probability": 0.7992,
+        "market_price_usd": 0.10
+      },
+      {
+        "item_name": "Fracture Purple Pool Average",
+        "rarity": "purple",
+        "probability": 0.1598,
+        "market_price_usd": 0.55
+      },
+      {
+        "item_name": "Fracture Pink Pool Average",
+        "rarity": "pink",
+        "probability": 0.032,
+        "market_price_usd": 4.20
+      },
+      {
+        "item_name": "Fracture Red Pool Average",
+        "rarity": "red",
+        "probability": 0.0064,
+        "market_price_usd": 48.00
+      },
+      {
+        "item_name": "Fracture Gold Pool Average",
+        "rarity": "gold",
+        "probability": 0.0026,
+        "market_price_usd": 250.00
+      }
+    ]
+  },
+  {
+    "case_name": "Dreams & Nightmares Case",
+    "drops": [
+      {
+        "item_name": "Dreams Blue Pool Average",
+        "rarity": "blue",
+        "probability": 0.7992,
+        "market_price_usd": 0.09
+      },
+      {
+        "item_name": "Dreams Purple Pool Average",
+        "rarity": "purple",
+        "probability": 0.1598,
+        "market_price_usd": 0.60
+      },
+      {
+        "item_name": "Dreams Pink Pool Average",
+        "rarity": "pink",
+        "probability": 0.032,
+        "market_price_usd": 5.00
+      },
+      {
+        "item_name": "Dreams Red Pool Average",
+        "rarity": "red",
+        "probability": 0.0064,
+        "market_price_usd": 60.00
+      },
+      {
+        "item_name": "Dreams Gold Pool Average",
+        "rarity": "gold",
+        "probability": 0.0026,
+        "market_price_usd": 380.00
+      }
+    ]
+  },
+  {
+    "case_name": "Kilowatt Case",
+    "drops": [
+      {
+        "item_name": "Kilowatt Blue Pool Average",
+        "rarity": "blue",
+        "probability": 0.7992,
+        "market_price_usd": 0.11
+      },
+      {
+        "item_name": "Kilowatt Purple Pool Average",
+        "rarity": "purple",
+        "probability": 0.1598,
+        "market_price_usd": 0.70
+      },
+      {
+        "item_name": "Kilowatt Pink Pool Average",
+        "rarity": "pink",
+        "probability": 0.032,
+        "market_price_usd": 6.00
+      },
+      {
+        "item_name": "Kilowatt Red Pool Average",
+        "rarity": "red",
+        "probability": 0.0064,
+        "market_price_usd": 75.00
+      },
+      {
+        "item_name": "Kilowatt Gold Pool Average",
+        "rarity": "gold",
+        "probability": 0.0026,
+        "market_price_usd": 190.00
+      }
+    ]
+  },
+  {
+    "case_name": "Revolution Case",
+    "drops": [
+      {
+        "item_name": "Revolution Blue Pool Average",
+        "rarity": "blue",
+        "probability": 0.7992,
+        "market_price_usd": 0.10
+      },
+      {
+        "item_name": "Revolution Purple Pool Average",
+        "rarity": "purple",
+        "probability": 0.1598,
+        "market_price_usd": 0.65
+      },
+      {
+        "item_name": "Revolution Pink Pool Average",
+        "rarity": "pink",
+        "probability": 0.032,
+        "market_price_usd": 5.50
+      },
+      {
+        "item_name": "Revolution Red Pool Average",
+        "rarity": "red",
+        "probability": 0.0064,
+        "market_price_usd": 70.00
+      },
+      {
+        "item_name": "Revolution Gold Pool Average",
+        "rarity": "gold",
+        "probability": 0.0026,
+        "market_price_usd": 220.00
+      }
+    ]
+  }
+]

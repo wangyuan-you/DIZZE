@@ -3,29 +3,42 @@ import sys
 from PySide6.QtWidgets import QApplication
 
 from src.database.db import init_database
-from src.database.case_repository import import_cases_from_json
 from src.gui.main_window import MainWindow
-from src.utils.logger import setup_logger
 from src.market.market_service import MarketService
+from src.services.case_drop_importer import import_case_drops_from_json
+from src.utils.logger import setup_logger
 
 
-def main():
+def main() -> None:
     logger = setup_logger()
     logger.info("DIZZE started")
 
-    init_database()
-    #import_cases_from_json()
-    market_service = MarketService()
-    #market_service.seed_demo_prices()
-    logger.info("Market data layer initialized")
-    logger.info("Database initialized and cases imported")
+    try:
+        init_database()
+        logger.info("Database initialized")
+
+        imported_drops = import_case_drops_from_json()
+        logger.info("Imported %s case drops", imported_drops)
+
+        market_service = MarketService()
+        logger.info(
+            "Market data layer initialized: %s",
+            market_service.get_market_status(),
+        )
+
+    except Exception:
+        logger.exception("Application initialization failed")
+        raise
 
     app = QApplication(sys.argv)
 
     window = MainWindow()
     window.show()
 
-    sys.exit(app.exec())
+    exit_code = app.exec()
+
+    logger.info("DIZZE closed with exit code %s", exit_code)
+    sys.exit(exit_code)
 
 
 if __name__ == "__main__":
