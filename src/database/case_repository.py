@@ -82,3 +82,18 @@ def get_cases_from_db():
         }
         for row in rows
     ]
+def update_case_price(case_name, case_price_usd):
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        UPDATE cases
+        SET case_price_usd = ?, updated_at = datetime('now')
+        WHERE name = ?
+        """,
+        (case_price_usd, case_name),
+    )
+
+    conn.commit()
+    conn.close()

@@ -14,9 +14,9 @@ def main():
     logger.info("DIZZE started")
 
     init_database()
-    import_cases_from_json()
+    #import_cases_from_json()
     market_service = MarketService()
-    market_service.seed_demo_prices()
+    #market_service.seed_demo_prices()
     logger.info("Market data layer initialized")
     logger.info("Database initialized and cases imported")
 
