@@ -1,6 +1,6 @@
 {
   "app_name": "DIZZE",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "currency": "TWD",
   "usd_twd": 32.0,
   "steam_key_price_usd": 2.49,
@@ -10,8 +10,10 @@
   "log_path": "logs/dizze.log",
   "catalog_source": {
     "name": "ByMykel CSGO-API",
-    "language": "en",
+    "language": "zh-CN",
     "base_url": "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api",
-    "timeout_seconds": 30
+    "timeout_seconds": 30,
+    "convert_to_traditional": true,
+    "opencc_config": "s2twp"
   }
 }

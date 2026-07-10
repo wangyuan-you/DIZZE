@@ -66,3 +66,10 @@
 2026-07-10 16:55:21,993 | INFO | Imported 20 case drops
 2026-07-10 16:55:21,995 | INFO | Market data layer initialized: {'market': 'Steam', 'status': 'Ready', 'cache_count': 4, 'currency': 'TWD'}
 2026-07-10 16:56:34,371 | INFO | DIZZE closed with exit code 0
+2026-07-10 17:09:52,467 | INFO | Catalog sync completed: {'status': 'success', 'source': 'ByMykel CSGO-API', 'language': 'zh-CN', 'display_language': 'zh-TW', 'cases_count': 42, 'items_count': 11058, 'started_at': '2026-07-10 17:09:46', 'finished_at': '2026-07-10 17:09:52'}
+2026-07-10 17:10:06,344 | INFO | DIZZE started
+2026-07-10 17:10:06,345 | INFO | Database initialized
+2026-07-10 17:10:07,360 | INFO | Imported 20 case drops
+2026-07-10 17:10:07,363 | INFO | Market data layer initialized: {'market': 'Steam', 'status': 'Ready', 'cache_count': 4, 'currency': 'TWD'}
+2026-07-10 17:10:45,869 | INFO | DIZZE closed with exit code 0
+2026-07-10 17:23:48,207 | INFO | Catalog sync completed: {'status': 'success', 'source': 'ByMykel CSGO-API', 'language': 'zh-CN', 'display_language': 'zh-TW', 'case_name_overrides': 3, 'cases_count': 42, 'items_count': 11058, 'started_at': '2026-07-10 17:23:41', 'finished_at': '2026-07-10 17:23:48'}
